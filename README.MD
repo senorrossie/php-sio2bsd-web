@@ -1,5 +1,7 @@
 # WebGUI for sio2bsd
 
+![Screenshot](https://user-images.githubusercontent.com/29672548/42733316-ae4edf4a-882f-11e8-9d9f-891accd25c0a.jpg "WebGUI (index.css.php) rendered by a chrome browser on windows")
+
 ## Background
 When you are at an event and have limited space and even less time to do something usefull I often find myself taking shortcuts.
 
