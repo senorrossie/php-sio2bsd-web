@@ -17,10 +17,11 @@ I had already copied a few hundred ATR's to the Raspbery Pi's SD card (Demos, DO
 
 ## Installation
 First install a webserver and my (web-) scripting language of choice (2nd):
+
     apt-get install -y mini-httpd php5-cgi
     mkdir -p /var/www/html && chown -R www-data: /var/www/
- 
 Then create a minimal version the mini-httpd config file:
+
     cat << EOF > /etc/mini-httpd.conf
     host=0.0.0.0
     port=80
@@ -35,10 +36,11 @@ Then create a minimal version the mini-httpd config file:
  
     charset=iso-8859-1
     EOF
- 
 FIX the default settings in the .ini file of the php5-cgi package which is apache tailored and does not work with mini-httpd by default:
+
     sed -i 's/\;cgi\.force_redirect\ =\ 1/cgi\.force_redirect\ =\ 0/' /etc/php5/cgi/php.ini
 Last modify `/etc/default/mini-httpd` to allow the service to start, enable the service in the default runlevels and start it manually for this session:
+
     cat << EOF > /etc/default/mini-httpd
     # Defaults for mini_httpd initscript
     # Author: Marvin Stark <marv@der-marv.de>
@@ -53,15 +55,13 @@ Last modify `/etc/default/mini-httpd` to allow the service to start, enable the 
     EOF
     insserv -d mini-httpd
     service mini-httpd start
-Now the web server is up and running, it is time to install the code to swap the floppies. First off, it all needs to reside in `/var/www/html`, as that's where the web server is looking for its files. The application can be installed like so:
-    git clone https://github.com/senorrossie/php-sio2bsd-web.git /var/www/html/ && chown -R www-data: /var/www/html 
+Now the web server is up and running, it is time to install the code to swap the floppies. First off, it all needs to reside in `/var/www/html`, as that's where the web server is looking for its files. The application can be installed like so: `git clone https://github.com/senorrossie/php-sio2bsd-web.git /var/www/html/ && chown -R www-data: /var/www/html`
 
 ## Dependencies
 In order to talk SIO over the USB/Serial port, you need the [sio2bsd program](https://github.com/TheMontezuma/SIO2BSD). A precompiled version is available from the [Atari Age forum post](http://atariage.com/forums/topic/209010-sio2pi-raspberry-pi-as-a-floppy/) on the subject.
 
 ## Configuration
-There already is a config file in the repo with some sane defaults (notice that I moved the sio2bsd executable to a directory in the default path (/usr/bin)). If you want to store the command someplace else, simply specify the full path for `$cfg["sio2bsd"]["cmd"]`, eg:
-    $cfg["sio2bsd"]["cmd"]="/usr/local/bin/sio2bsd";
+There already is a config file in the repo with some sane defaults (notice that I moved the sio2bsd executable to a directory in the default path (`/usr/bin`)). If you want to store the command someplace else, simply specify the full path for `$cfg["sio2bsd"]["cmd"]`, eg: `$cfg["sio2bsd"]["cmd"]="/usr/local/bin/sio2bsd";`
 If you need warp speed or want to add other parameters to the sio2bsd command by default, put them in `$cfg["sio2bsd"]["param"]=""` and if you want to load a default disk in a drive, specify the full path to the ATR file here as well.
 
 ## Generate the list of ATR's
@@ -69,6 +69,8 @@ In order to update your list of images I created a separate script. As the Pi is
 
 ## Index
 The main hack... Here is where the ~~icky~~magic part happens. There are two versions, one based on layout via css and one using tables. Create a symlink to the version you prefer:
+
      cd /var/www/html && ln -s index.css.php index.php
 or
+
      cd /var/www/html && ln -s index.tables.php index.php
