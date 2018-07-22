@@ -1,7 +1,8 @@
 # WebGUI for sio2bsd
 
-The old version is no more....
-![OLD Screenshot](https://user-images.githubusercontent.com/29672548/42733316-ae4edf4a-882f-11e8-9d9f-891accd25c0a.jpg "WebGUI (index.css.php) rendered by a chrome browser on windows")
+The [old version](https://github.com/senorrossie/php-sio2bsd-web/releases/tag/v1.0 "old version") is no more.... Here is the new and improved version:
+![Develop Screenshot](https://user-images.githubusercontent.com/29672548/43044813-bd58d67a-8dad-11e8-97cd-6f84b2c5a5ed.jpg 
+"WebGUI (index.php) rendered by a chrome browser on windows")
 
 ## Background
 What I hacked together in an hour sufficed for the moment. With all the new atari 8-bit stuff that is released, this hack needed some improvements, to bring it into the modern atari 8-bit era, so to say.
