@@ -3,6 +3,19 @@
   include_once("config.inc.php");
 	include_once( $cfg["php"]["include"] . "functions.inc.php");
 
+	function hasImage($itemname="", $noimage="") {
+		if( file_exists($itemname) === TRUE ) {
+			// Image exists
+			return($itemname);
+		} else {
+			$altimage=trim(stristr($itemname, " - ", true )) . ".png";
+			if( @file_exists($altimage) === TRUE ){
+				return($altimage);
+			}
+		}
+		return $noimage;
+	}
+
 	function dump_array_to_html( $filename="", $data=array(), $parent="") {
 		global $cfg;
 		$filename=$cfg["atr"]["htmlout"].$filename;
@@ -15,6 +28,7 @@
 			$noimage="img/noss.png";
 			$htmlout="<!-- Add main styling -->\n<link rel=\"stylesheet\" href=\"css/slide.css\">";
 			$htmlout.="\n<!-- Container for the image gallery -->\n<div class=\"slider-container\">\n";
+			//$htmlout="<div class=\"mainSlide\"><img src=\"$selected\" style=\"width:100%\"></div>\n";
 			if( @fwrite($fd, $htmlout) === FALSE ) {
 				@fclose($fd);
 				return false;
@@ -33,14 +47,10 @@
 						$shortname=str_replace( $cfg["atr"]["path"], $cfg["atr"]["link"], $imgname );
 						$atrname=basename( $imgname, ".atr" );
 						$download=str_replace( $cfg["php"]["basedir"], "", $imgname );
-						$image=str_replace(".atr", ".png", $download );
-						if( file_exists($image) !== FALSE ) {
-							$htmlout="<div class=\"mainSlide\"><img src=\"$image\" style=\"width:100%\"></div>\n";
-							$slideout.="<div class=\"column\"><img class=\"thumb cursor\" src=\"$image\" style=\"width:100%\" id=\"$shortname\" draggable=\"true\" ondragstart=\"drag(event)\" onclick=\"currentSlide($c)\" alt=\"$shortname\"></div>\n";
-						} else {
-							$htmlout="<div class=\"mainSlide\"><img src=\"$noimage\" style=\"width:100%\"></div>\n";
-							$slideout.="<div class=\"column\"><img class=\"thumb cursor\" src=\"$noimage\" style=\"width:100%\" id=\"$shortname\" draggable=\"true\" ondragstart=\"drag(event)\" onclick=\"currentSlide($c)\" alt=\"$shortname\"></div>\n";
-						}
+						$image=hasImage(str_replace(".atr", ".png", $download), $noimage );
+						print( "Image: $image\n");
+						$htmlout="<div class=\"mainSlide\"><img src=\"$image\" style=\"width:100%\"></div>\n";
+						$slideout.="<div class=\"column\"><img class=\"thumb cursor\" src=\"$image\" style=\"width:100%\" id=\"$shortname\" draggable=\"true\" ondragstart=\"drag(event)\" onclick=\"currentSlide($c)\" alt=\"$shortname\"></div>\n";
 						if( @fwrite($fd, $htmlout) === FALSE ) {
 							@fclose($fd);
 							return false;
@@ -48,8 +58,8 @@
 					}
 				}
 			}
-			$slideout.="</div></div>\n";
-			//$slideout.="<script src=\"js/slide.js\"></script>\n";
+			$slideout.="</div>\n</div>\n";
+			$slideout.="<script src=\"js/slide.js\" async=false></script>\n";
 			if( @fwrite($fd, $slideout) === FALSE ) {
 				@fclose($fd);
 				return false;
@@ -67,7 +77,9 @@
 
 	/** Is our output directory in place? */
 	if( file_exists($cfg["atr"]["htmlout"]) === FALSE) {
-		@mkdir( $cfg["atr"]["htmlout"], 0775);
+		if ( @mkdir( $cfg["atr"]["htmlout"], 0775) === FALSE) {
+			die("Unable to create folder ". $cfg["atr"]["htmlout"] ."!\n");
+		}
 	}
 
 	$dir="root";
