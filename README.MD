@@ -1,11 +1,12 @@
 # WebGUI for sio2bsd
-
 The [old version](https://github.com/senorrossie/php-sio2bsd-web/releases/tag/v1.0 "old version") is no more.... Here is the new and improved version:
 ![Develop Screenshot](https://user-images.githubusercontent.com/29672548/43044813-bd58d67a-8dad-11e8-97cd-6f84b2c5a5ed.jpg 
 "WebGUI (index.php) rendered by a chrome browser on windows")
 
 ## Background
-What I hacked together in an hour sufficed for the moment. With all the new atari 8-bit stuff that is released, this hack needed some improvements, to bring it into the modern atari 8-bit era, so to say.
+What I hacked together in an hour sufficed for the moment. With all the new atari 8-bit stuff that is released, this hack needed some improvements to bring it into the modern atari 8-bit era, so to say.
+
+Even though I am personally using this on a raspberry pi, any machine capable of running linux and/or sios2bd should work. Also any webserver capable of running php can be used. I tested this only on mini-httpd.
 
 ## Installation
 First install a webserver and my (web-) scripting language of choice (2nd):
@@ -49,18 +50,7 @@ Last modify `/etc/default/mini-httpd` to allow the service to start, enable the 
     service mini-httpd start
 Now the web server is up and running, it is time to install the code to swap the floppies. First off, it all needs to reside in `/var/www/html`, as that's where the web server is looking for its files. The application can be installed like so: `git clone https://github.com/senorrossie/php-sio2bsd-web.git /var/www/html/ && chown -R www-data: /var/www/html`
 
-### Cache
-
-    mkdir -p /var/cache/html
-    cat << EOF > /etc/fstab
-    ### Ramdisk
-    tmpfs           /var/cache/html    tmpfs   nodev,nosuid,size=16M   0 0
-    EOF
-    cd /var/www/html
-    ln -s /var/cache/html/ .cache
-    
 ### Optional: The fandal archive
-
 If you are not like me, and you do not have tons of .atr images lying around, perhaps a kickstart is needed. For example, let's have the Fandal collection available on your RasPi, so you can experience both modern and classic games, and even demos!
 
 Fetch the complete archive in zip format (link is on the fandal webpage) and copy it to your pie, of feed the URL to wget on the RasPi itself. Unpack the archive to a directory you like, preferably in the basedir of the webserver (eg. `/var/www/html/fandal`) and don't forget to set the correct permissions(`chown -R www-data: /var/www/html/fandal`). And as a last step, you need to modify `.config.inc.php` (`$cfg["atr"]["path"]`) to match the location you selected.
