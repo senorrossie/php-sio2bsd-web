@@ -1,4 +1,31 @@
 /*** Style page content ***/
+/* Navigation bar */
+.icon-bar {
+    width: 80px;                    /* Set a specific width */
+    background-color: #000;         /* Black background */
+
+    height: 100%;
+    position: fixed;
+    z-index: 10;                    /* Stay on top */
+    top: 0;                         /* Stay at the top */
+    left: 0;                        /* Fixed on the left */
+    overflow-x: hidden;             /* Disable horizontal scroll */
+    padding-top: 25px;
+}
+.icon-bar a {
+    display: block;                 /* Make the links appear below each other instead of side-by-side */
+    text-align: center;             /* Center-align text */
+    padding: 16px;                  /* Add some padding */
+    transition: all 0.3s ease;      /* Add transition for hover effects */
+    color: white;                   /* White text color */
+    font-size: 36px;                /* Increased font-size */
+}
+.icon-bar a:hover {
+    background-color: rgba(185, 174, 174, 0.61);       /* Add a hover color */
+}
+.active {
+    background-color: #C0C0C0;      /* Add an active/current color */
+}
 * {
     box-sizing: border-box;
 }
@@ -25,7 +52,7 @@
     left: 0;                        /* Fixed on the left */
     overflow: hidden;               /* Disable scrollbar */
 }
-
+/* Header: Folder navigation bar */
 .hdr-folder-nav {
     background-color: #000;
 
@@ -66,7 +93,7 @@
 .folder:hover {
     background-color: #777;
 }
-
+/* Main content */
 .main {
     padding: 120px 10px 0px 100px;  /* T,R,B,L */
 }

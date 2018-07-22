@@ -9,10 +9,6 @@
 		<!-- /// Styling /// -->
 		<!-- Add icon library -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-
-		<!-- Add icon-bar navigation -->
-		<link rel="stylesheet" href="css/navbar.css">
-
 		<!-- Add main styling -->
 		<link rel="stylesheet" href="css/tpl-plain.css">
 
