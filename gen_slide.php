@@ -59,7 +59,7 @@
 				}
 			}
 			$slideout.="</div>\n</div>\n";
-			$slideout.="<script src=\"js/slide.js\" async=false></script>\n";
+			$slideout.="<script src=\"js/slide.js\"></script>\n";
 			if( @fwrite($fd, $slideout) === FALSE ) {
 				@fclose($fd);
 				return false;
