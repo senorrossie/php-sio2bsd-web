@@ -28,13 +28,6 @@
 
 .hdr-folder-nav {
     background-color: #000;
-    color: #fff;
-
-    text-align: center;
-	font-size: 20px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
 
     width: 100%;                    /* Full screen width */
     height: 120px;                  /* Equal to or larger than padding-top .icon-bar */
@@ -44,8 +37,34 @@
     z-index: 0;                     /* Stay below .icon-bar */
     top: 0;                         /* Stay at the top */
     left: 0;                        /* Fixed on the left */
+}
+#folder-hdr {
+    color: #fff;
+
+    text-align: left;
+	font-family: Verdana, Arial;
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+
+}
+.folder-tree {
+    background-color: #000;
+    color: #fff;
+
     overflow-x: auto;               /* Horizontal scrollbar */
-    overflow-y: hidden;
+    white-space: nowrap;
+}
+.folder {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+.folder:hover {
+    background-color: #777;
 }
 
 .main {
