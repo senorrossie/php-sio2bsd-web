@@ -1,0 +1,390 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+    height: 640px;
+    width: 480px;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 24px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    font-size: 16px;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 8.15%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+</style>
+<!-- Container for the image gallery -->
+<div class="container">
+<div class="mySlides"><div class="numbertext">1</div><img src="a8.fandal.cz/Images/Games/A/Axis Assassin.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">2</div><img src="a8.fandal.cz/Images/Games/A/Aventuras D'Onofrio.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">3</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">4</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">5</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">6</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">7</div><img src="a8.fandal.cz/Images/Games/A/Aura Adventures.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">8</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">9</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">10</div><img src="a8.fandal.cz/Images/Games/A/Attack of the Mutant Pigeons.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">11</div><img src="a8.fandal.cz/Images/Games/A/Attack at EP-CYG-4.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">12</div><img src="a8.fandal.cz/Images/Games/A/Atomix.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">13</div><img src="a8.fandal.cz/Images/Games/A/Atomit.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">14</div><img src="a8.fandal.cz/Images/Games/A/Atomit II.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">15</div><img src="a8.fandal.cz/Images/Games/A/Atomic Gnom.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">16</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">17</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">18</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">19</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">20</div><img src="a8.fandal.cz/Images/Games/A/Atarzee.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">21</div><img src="a8.fandal.cz/Images/Games/A/Atarioracle.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">22</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">23</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">24</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">25</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">26</div><img src="a8.fandal.cz/Images/Games/A/Atari-Socoban.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">27</div><img src="a8.fandal.cz/Images/Games/A/Atari vs Commodore.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">28</div><img src="a8.fandal.cz/Images/Games/A/Atari XL Sokoban.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">29</div><img src="a8.fandal.cz/Images/Games/A/Atari Telly Turtle.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">30</div><img src="a8.fandal.cz/Images/Games/A/Atari Memory.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">31</div><img src="a8.fandal.cz/Images/Games/A/Atari Greed.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">32</div><img src="a8.fandal.cz/Images/Games/A/Atari Double Monopoly.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">33</div><img src="a8.fandal.cz/Images/Games/A/Atari Arogue.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">34</div><img src="a8.fandal.cz/Images/Games/A/At Arion Line - Mission Zero.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">35</div><img src="a8.fandal.cz/Images/Games/A/Asylum.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">36</div><img src="a8.fandal.cz/Images/Games/A/Asteroidz.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">37</div><img src="a8.fandal.cz/Images/Games/A/Asteroids Emulator.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">38</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">39</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">40</div><img src="a8.fandal.cz/Images/Games/A/Assassin's Cove.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">41</div><img src="a8.fandal.cz/Images/Games/A/Ashido.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">42</div><img src="a8.fandal.cz/Images/Games/A/Around the World.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">43</div><img src="a8.fandal.cz/Images/Games/A/Armor Assault.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">44</div><img src="a8.fandal.cz/Images/Games/A/Arkaneth II.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">45</div><img src="a8.fandal.cz/Images/Games/A/Arkaneth I.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">46</div><img src="a8.fandal.cz/Images/Games/A/Arena.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">47</div><img src="a8.fandal.cz/Images/Games/A/Aquanaut.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">48</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">49</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">50</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">51</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">52</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">53</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">54</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">55</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">56</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">57</div><img src="a8.fandal.cz/Images/Games/A/Another World.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">58</div><img src="a8.fandal.cz/Images/Games/A/Anduril.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">59</div><img src="a8.fandal.cz/Images/Games/A/Anduril II.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">60</div><img src="a8.fandal.cz/Images/Games/A/Andromeda Conquest.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">61</div><img src="a8.fandal.cz/Images/Games/A/Ancient Empire.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">62</div><img src="a8.fandal.cz/Images/Games/A/Anagrams.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">63</div><img src="a8.fandal.cz/Images/Games/A/Amnesia.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">64</div><img src="a8.fandal.cz/Images/Games/A/Americas Cup.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">65</div><img src="a8.fandal.cz/Images/Games/A/Alternity.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">66</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">67</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">68</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">69</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">70</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">71</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">72</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">73</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">74</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">75</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">76</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">77</div><img src="a8.fandal.cz/Images/Games/A/Alligator Mix.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">78</div><img src="a8.fandal.cz/Images/Games/A/Allies.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">79</div><img src="a8.fandal.cz/Images/Games/A/All-Pro Football.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">80</div><img src="a8.fandal.cz/Images/Games/A/All-Pro Football - Chalkboard.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">81</div><img src="a8.fandal.cz/Images/Games/A/Aliens.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">82</div><img src="a8.fandal.cz/Images/Games/A/Aliens from Waves.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">83</div><img src="a8.fandal.cz/Images/Games/A/Alien Egg.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">84</div><img src="a8.fandal.cz/Images/Games/A/Alien Blast.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">85</div><img src="a8.fandal.cz/Images/Games/A/Alien Attack.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">86</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">87</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">88</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">89</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">90</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">91</div><img src="a8.fandal.cz/Images/Games/A/Ali Baba and the Forty Thieves.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">92</div><img src="a8.fandal.cz/Images/Games/A/Alfa Boot.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">93</div><img src="a8.fandal.cz/Images/Games/A/Aladin.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">94</div><img src="a8.fandal.cz/Images/Games/A/Akcie a tovarny.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">95</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">96</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">97</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">98</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">99</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">100</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">101</div><img src="a8.fandal.cz/Images/Games/A/Airline.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">102</div><img src="a8.fandal.cz/Images/Games/A/Aftermath.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">103</div><img src="a8.fandal.cz/Images/Games/A/After Pearl.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">104</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">105</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">106</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">107</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">108</div><img src="a8.fandal.cz/Images/Games/A/Adventure.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">109</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">110</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">111</div><img src="a8.fandal.cz/Images/Games/A/Admirandus.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">112</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">113</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">114</div><img src="a8.fandal.cz/Images/Games/A/Acey-Deucey.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">115</div><img src="a8.fandal.cz/Images/Games/A/Ace of Aces.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">116</div><img src="a8.fandal.cz/Images/Games/A/Accion.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">117</div><img src="a8.fandal.cz/Images/Games/A/Abuse.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">118</div><img src="a8.fandal.cz/Images/Games/A/Absolute Zero.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">119</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">120</div><img src="img/noss.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">121</div><img src="a8.fandal.cz/Images/Games/A/AE.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">122</div><img src="a8.fandal.cz/Images/Games/A/ACTris!.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">123</div><img src="a8.fandal.cz/Images/Games/A/ABC.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">124</div><img src="a8.fandal.cz/Images/Games/A/A-Zone.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">125</div><img src="a8.fandal.cz/Images/Games/A/A Day to Find Out.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">126</div><img src="a8.fandal.cz/Images/Games/A/A Day at the Races.png" style="width:100%"></div>
+<div class="mySlides"><div class="numbertext">127</div><img src="a8.fandal.cz/Images/Games/A/A Christmas Eve Nightmare.png" style="width:100%"></div>
+
+<!-- Next and previous buttons -->
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+<!-- Image text -->
+<div class="caption-container"><p id="caption"></p></div>
+
+<!-- Thumbnail images -->
+<div class="row">
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Axis Assassin.png" style="width:100%" onclick="currentSlide(1)" alt="Axis Assassin.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Aventuras D'Onofrio.png" style="width:100%" onclick="currentSlide(2)" alt="Aventuras D'Onofrio.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(3)" alt="Autoduel - Disk 4.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(4)" alt="Autoduel - Disk 3.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(5)" alt="Autoduel - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(6)" alt="Autoduel - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Aura Adventures.png" style="width:100%" onclick="currentSlide(7)" alt="Aura Adventures.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(8)" alt="Auf Der Jagd Nach Mr. X - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(9)" alt="Auf Der Jagd Nach Mr. X - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Attack of the Mutant Pigeons.png" style="width:100%" onclick="currentSlide(10)" alt="Attack of the Mutant Pigeons.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Attack at EP-CYG-4.png" style="width:100%" onclick="currentSlide(11)" alt="Attack at EP-CYG-4.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atomix.png" style="width:100%" onclick="currentSlide(12)" alt="Atomix.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atomit.png" style="width:100%" onclick="currentSlide(13)" alt="Atomit.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atomit II.png" style="width:100%" onclick="currentSlide(14)" alt="Atomit II.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atomic Gnom.png" style="width:100%" onclick="currentSlide(15)" alt="Atomic Gnom.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(16)" alt="Atlantis - Disk 4.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(17)" alt="Atlantis - Disk 3.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(18)" alt="Atlantis - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(19)" alt="Atlantis - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atarzee.png" style="width:100%" onclick="currentSlide(20)" alt="Atarzee.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atarioracle.png" style="width:100%" onclick="currentSlide(21)" alt="Atarioracle.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(22)" alt="AtariMusic II - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(23)" alt="AtariMusic II - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(24)" alt="AtariMusic I - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(25)" alt="AtariMusic I - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atari-Socoban.png" style="width:100%" onclick="currentSlide(26)" alt="Atari-Socoban.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atari vs Commodore.png" style="width:100%" onclick="currentSlide(27)" alt="Atari vs Commodore.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atari XL Sokoban.png" style="width:100%" onclick="currentSlide(28)" alt="Atari XL Sokoban.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atari Telly Turtle.png" style="width:100%" onclick="currentSlide(29)" alt="Atari Telly Turtle.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atari Memory.png" style="width:100%" onclick="currentSlide(30)" alt="Atari Memory.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atari Greed.png" style="width:100%" onclick="currentSlide(31)" alt="Atari Greed.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atari Double Monopoly.png" style="width:100%" onclick="currentSlide(32)" alt="Atari Double Monopoly.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Atari Arogue.png" style="width:100%" onclick="currentSlide(33)" alt="Atari Arogue.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/At Arion Line - Mission Zero.png" style="width:100%" onclick="currentSlide(34)" alt="At Arion Line - Mission Zero.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Asylum.png" style="width:100%" onclick="currentSlide(35)" alt="Asylum.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Asteroidz.png" style="width:100%" onclick="currentSlide(36)" alt="Asteroidz.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Asteroids Emulator.png" style="width:100%" onclick="currentSlide(37)" alt="Asteroids Emulator.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(38)" alt="Assault on the Astral Rift - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(39)" alt="Assault on the Astral Rift - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Assassin's Cove.png" style="width:100%" onclick="currentSlide(40)" alt="Assassin's Cove.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Ashido.png" style="width:100%" onclick="currentSlide(41)" alt="Ashido.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Around the World.png" style="width:100%" onclick="currentSlide(42)" alt="Around the World.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Armor Assault.png" style="width:100%" onclick="currentSlide(43)" alt="Armor Assault.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Arkaneth II.png" style="width:100%" onclick="currentSlide(44)" alt="Arkaneth II.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Arkaneth I.png" style="width:100%" onclick="currentSlide(45)" alt="Arkaneth I.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Arena.png" style="width:100%" onclick="currentSlide(46)" alt="Arena.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Aquanaut.png" style="width:100%" onclick="currentSlide(47)" alt="Aquanaut.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(48)" alt="Antquest - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(49)" alt="Antquest - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(50)" alt="Antic Picross II Editor.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(51)" alt="Antic Picross II (PL).atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(52)" alt="Antic Picross II (EN).atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(53)" alt="Antic Picross II (DE).atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(54)" alt="Antic Picross II (CZ).atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(55)" alt="Antic Picross - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(56)" alt="Antic Picross - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Another World.png" style="width:100%" onclick="currentSlide(57)" alt="Another World.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Anduril.png" style="width:100%" onclick="currentSlide(58)" alt="Anduril.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Anduril II.png" style="width:100%" onclick="currentSlide(59)" alt="Anduril II.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Andromeda Conquest.png" style="width:100%" onclick="currentSlide(60)" alt="Andromeda Conquest.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Ancient Empire.png" style="width:100%" onclick="currentSlide(61)" alt="Ancient Empire.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Anagrams.png" style="width:100%" onclick="currentSlide(62)" alt="Anagrams.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Amnesia.png" style="width:100%" onclick="currentSlide(63)" alt="Amnesia.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Americas Cup.png" style="width:100%" onclick="currentSlide(64)" alt="Americas Cup.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Alternity.png" style="width:100%" onclick="currentSlide(65)" alt="Alternity.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(66)" alt="Alternate Reality the Dungeon - Disk 5.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(67)" alt="Alternate Reality the Dungeon - Disk 4.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(68)" alt="Alternate Reality the Dungeon - Disk 3.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(69)" alt="Alternate Reality the Dungeon - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(70)" alt="Alternate Reality the Dungeon - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(71)" alt="Alternate Reality the City - Disk 4.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(72)" alt="Alternate Reality the City - Disk 3.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(73)" alt="Alternate Reality the City - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(74)" alt="Alternate Reality the City - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(75)" alt="Alptraum - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(76)" alt="Alptraum - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Alligator Mix.png" style="width:100%" onclick="currentSlide(77)" alt="Alligator Mix.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Allies.png" style="width:100%" onclick="currentSlide(78)" alt="Allies.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/All-Pro Football.png" style="width:100%" onclick="currentSlide(79)" alt="All-Pro Football.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/All-Pro Football - Chalkboard.png" style="width:100%" onclick="currentSlide(80)" alt="All-Pro Football - Chalkboard.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Aliens.png" style="width:100%" onclick="currentSlide(81)" alt="Aliens.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Aliens from Waves.png" style="width:100%" onclick="currentSlide(82)" alt="Aliens from Waves.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Alien Egg.png" style="width:100%" onclick="currentSlide(83)" alt="Alien Egg.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Alien Blast.png" style="width:100%" onclick="currentSlide(84)" alt="Alien Blast.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Alien Attack.png" style="width:100%" onclick="currentSlide(85)" alt="Alien Attack.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(86)" alt="Alice in Wonderland - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(87)" alt="Alice in Wonderland - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(88)" alt="Aliants - Disk 3.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(89)" alt="Aliants - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(90)" alt="Aliants - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Ali Baba and the Forty Thieves.png" style="width:100%" onclick="currentSlide(91)" alt="Ali Baba and the Forty Thieves.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Alfa Boot.png" style="width:100%" onclick="currentSlide(92)" alt="Alfa Boot.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Aladin.png" style="width:100%" onclick="currentSlide(93)" alt="Aladin.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Akcie a tovarny.png" style="width:100%" onclick="currentSlide(94)" alt="Akcie a tovarny.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(95)" alt="Akanis Ula - Disk 6.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(96)" alt="Akanis Ula - Disk 5.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(97)" alt="Akanis Ula - Disk 4.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(98)" alt="Akanis Ula - Disk 3.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(99)" alt="Akanis Ula - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(100)" alt="Akanis Ula - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Airline.png" style="width:100%" onclick="currentSlide(101)" alt="Airline.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Aftermath.png" style="width:100%" onclick="currentSlide(102)" alt="Aftermath.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/After Pearl.png" style="width:100%" onclick="currentSlide(103)" alt="After Pearl.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(104)" alt="Aerobics - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(105)" alt="Aerobics - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(106)" alt="Adventureland - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(107)" alt="Adventureland - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Adventure.png" style="width:100%" onclick="currentSlide(108)" alt="Adventure.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(109)" alt="Adventure Master - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(110)" alt="Adventure Master - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Admirandus.png" style="width:100%" onclick="currentSlide(111)" alt="Admirandus.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(112)" alt="Adalmar - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(113)" alt="Adalmar - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Acey-Deucey.png" style="width:100%" onclick="currentSlide(114)" alt="Acey-Deucey.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Ace of Aces.png" style="width:100%" onclick="currentSlide(115)" alt="Ace of Aces.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Accion.png" style="width:100%" onclick="currentSlide(116)" alt="Accion.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Abuse.png" style="width:100%" onclick="currentSlide(117)" alt="Abuse.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/Absolute Zero.png" style="width:100%" onclick="currentSlide(118)" alt="Absolute Zero.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(119)" alt="Abenteuer in Schottland - Disk 2.atr"></div>
+<div class="column"><img class="demo cursor" src="img/noss.png" style="width:100%" onclick="currentSlide(120)" alt="Abenteuer in Schottland - Disk 1.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/AE.png" style="width:100%" onclick="currentSlide(121)" alt="AE.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/ACTris!.png" style="width:100%" onclick="currentSlide(122)" alt="ACTris!.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/ABC.png" style="width:100%" onclick="currentSlide(123)" alt="ABC.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/A-Zone.png" style="width:100%" onclick="currentSlide(124)" alt="A-Zone.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/A Day to Find Out.png" style="width:100%" onclick="currentSlide(125)" alt="A Day to Find Out.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/A Day at the Races.png" style="width:100%" onclick="currentSlide(126)" alt="A Day at the Races.atr"></div>
+<div class="column"><img class="demo cursor" src="a8.fandal.cz/Images/Games/A/A Christmas Eve Nightmare.png" style="width:100%" onclick="currentSlide(127)" alt="A Christmas Eve Nightmare.atr"></div>
+</div></div>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
