@@ -9,7 +9,7 @@
 	 *   $cfg["php"]["include"]=$cfg["php"]["base"]."inc/";         // Include directory
 	**/
 	/*** Script ***/
-	$cfg["php"]["basedir"]="./";                                    // base directory
+	$cfg["php"]["basedir"]="/var/www/html/new/";                    // base directory
 	$cfg["php"]["baseurl"]="/new/";                                 // base url
 	$cfg["php"]["include"]=$cfg["php"]["basedir"]."inc/";           // Include directory
 	/*** Disks ***/
