@@ -7,4 +7,7 @@
   it_dump_array_to_disk( $cfg["atr"]["tree"], $mytree);
   
   print ( count($mytree) ." entries found!\n");
+
+  // Generate the slideshow pages of the newly plotted tree
+  include("gen_slide.php");
 ?>

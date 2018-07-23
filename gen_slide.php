@@ -1,5 +1,8 @@
-#!/usr/bin/php5-cgi
 <?php
+	/**
+	 * TODO: No cached html if no files are present.
+	 */
+
   include_once("config.inc.php");
 	include_once( $cfg["php"]["include"] . "functions.inc.php");
 
