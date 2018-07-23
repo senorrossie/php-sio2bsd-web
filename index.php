@@ -34,13 +34,14 @@
 		</div>
 		<div id="folder-nav" class="hdr-folder-nav">
 			<div id="folder-hdr">Folders:</div>
-			  <div class="folder-tree">
-					<?php
-					  if( FALSE === @include($cfg["atr"]["htmlout"]."folders.html")) {
-							include( "folders.html");
-						}
-					?>
-        </div>
+			<div class="folder-tree">
+				<?php
+				  @include_once( "config.inc.php");
+				  if( FALSE === @include($cfg["atr"]["htmlout"]."folders.html")) {
+						include( "folders.html");
+					}
+				?>
+	        </div>
 		</div>
 		<div id="main" class="main">
 			<?php
