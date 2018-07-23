@@ -27,13 +27,13 @@
 			if (!$fd = @fopen($filename, 'w')) {
 				return false;
 			}
-			$folderout="<div class=\"folder\"><span class=\"glyphicon glyphicon-folder-close\"></span> / </div>\n";
+			$folderout="<div class=\"folder\"><span class=\"glyphicon glyphicon-folder-close\" onclick=\"loadDoc('ajax.php?dir=root', 'main');\"> /</span></div>\n";
 			if( @fwrite($fd, $folderout) === FALSE ) {
 				@fclose($fd);
 				return false;
 			}
 			foreach( $data as $folder ) {
-				$folderout="<div class=\"folder\"><span class=\"glyphicon glyphicon-folder-close\"></span> ". str_replace("-", "/", $folder) ." </div>\n";
+				$folderout="<div class=\"folder\"><span class=\"glyphicon glyphicon-folder-close\" onclick=\"loadDoc('ajax.php?dir=$folder', 'main');\"> ". str_replace("-", "/", $folder) ."</span></div>\n";
 				if( @fwrite($fd, $folderout) === FALSE ) {
 					@fclose($fd);
 					return false;
@@ -52,7 +52,6 @@
 			}
 			$c=0;
 			$noimage="img/noss.png";
-
 			$htmlout="<!-- Add main styling -->\n<link rel=\"stylesheet\" href=\"css/slide.css\">";
 			$htmlout.="\n<!-- Container for the image gallery -->\n<div class=\"slider-container\">\n";
 			//$htmlout="<div class=\"mainSlide\"><img src=\"$selected\" style=\"width:100%\"></div>\n";
