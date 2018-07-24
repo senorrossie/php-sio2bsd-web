@@ -14,6 +14,7 @@
 
 		<script src="js/ajax.js"></script>
 		<script src="js/slide.js"></script>
+		<script src="js/fdd.js"></script>
 		<script src="js/dragndrop.js"></script>
 	</head>
 	<body>
