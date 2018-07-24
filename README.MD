@@ -61,3 +61,12 @@ In order to talk SIO over the USB/Serial port, you need the [sio2bsd program](ht
 ## Configuration
 There already is a config file in the repo with some sane defaults (notice that I moved the sio2bsd executable to a directory in the default path (`/usr/bin`)). If you want to store the command someplace else, simply specify the full path for `$cfg["sio2bsd"]["cmd"]`, eg: `$cfg["sio2bsd"]["cmd"]="/usr/local/bin/sio2bsd";`
 If you need warp speed or want to add other parameters to the sio2bsd command by default, put them in `$cfg["sio2bsd"]["param"]=""` and if you want to load a default disk in a drive, specify the full path to the ATR file here as well.
+
+## SIO2BSD
+The original [sio2bsd program](https://github.com/TheMontezuma/SIO2BSD) sets the permissions on the serial lockfile (/tmp/sio2bsd.*) fairly strict. This causes the webgui to fail to restart the program. I created a binary that sets the permissions a lot less strict. To install this, issue the following commands (note that you specify the same destination directory as you put in your config file):
+
+    sudo cp sio2bsd /usr/bin
+    sudo chown root:root /usr/bin/sio2bsd
+    sudo chmod 4755 /usr/bin/sio2bsd
+    sudo rm -rf /tmp/sio2b* 2>/dev/null
+This will install the sio2bsd application to /usr/bin and makes it SETUID root.
