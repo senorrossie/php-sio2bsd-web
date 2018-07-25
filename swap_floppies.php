@@ -17,7 +17,16 @@
       isset($floppy) || $drives[$id]=$cfg["atr"]["drive".$id];
       print( "[D". $id ."]:". $drives[$id] ." ");
       $c=1;
-      $cmdCLI.="\"". str_replace( "./", $cfg["php"]["basedir"], $drives[$id], $c) ."\" ";
+      if( strpos($drives[$id], '-') !== 0 ) {
+        if( strpos($drives[$id], '.') === 0 ) {
+          $atrPath=str_replace( "./", $cfg["atr"]["path"], $drives[$id], $c);
+        } else {
+          $atrPath=$cfg["atr"]["path"] . $drives[$id];
+        }
+      } else {
+        $atrPath="-";
+      }
+      $cmdCLI.="\"". $atrPath ."\" ";
     }
     exec( "pkill -9 sio2bsd" );
     exec( "rm -rf /tmp/sio2bsd*" );
