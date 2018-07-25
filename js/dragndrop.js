@@ -17,6 +17,5 @@ function eject(ev) {
     var el = document.getElementById(ev.dataTransfer.getData('Text'));
     el.parentNode.removeChild(el);
     var myFloppies = hasDisks();
-    var myFloppies = hasDisks();
     swapDisks (myFloppies);
 }
