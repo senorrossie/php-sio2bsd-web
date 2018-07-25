@@ -52,9 +52,7 @@
 			}
 			$c=0;
 			$noimage="img/noss.png";
-			$htmlout="<!-- Add main styling -->\n<link rel=\"stylesheet\" href=\"css/slide.css\">";
-			$htmlout.="\n<!-- Container for the image gallery -->\n<div class=\"slider-container\">\n";
-			//$htmlout="<div class=\"mainSlide\"><img src=\"$selected\" style=\"width:100%\"></div>\n";
+			$htmlout="\n<!-- Container for the image gallery -->\n<div class=\"slider-container\">\n";
 			if( @fwrite($fd, $htmlout) === FALSE ) {
 				@fclose($fd);
 				return false;
