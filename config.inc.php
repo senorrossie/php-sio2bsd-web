@@ -9,8 +9,8 @@
 	 *   $cfg["php"]["include"]=$cfg["php"]["base"]."inc/";         // Include directory
 	**/
 	/*** Script ***/
-	$cfg["php"]["basedir"]="/var/www/html/new/";                    // base directory
-	$cfg["php"]["baseurl"]="/new/";                                 // base url
+	$cfg["php"]["basedir"]="/var/www/html/";		                    // base directory
+	$cfg["php"]["baseurl"]="/";		                                	// base url
 	$cfg["php"]["include"]=$cfg["php"]["basedir"]."inc/";           // Include directory
 	/*** Disks ***/
 	$cfg["atr"]["path"]=$cfg["php"]["basedir"]."fandal/";           // location of atr/xex/... files
@@ -24,8 +24,6 @@
 	$cfg["atr"]["drive2"]="-";            					                // default disk in D2: (- = empty drive)
 	$cfg["atr"]["drive3"]="-";            					                // default disk in D3: (- = empty drive)
 	$cfg["atr"]["drive4"]="-";             						              // default disk in D4: (- = empty drive)
-	/*** Webpage ***/
-	$cfg["html"]["ajax"]="true";
 	/*** SIO2BSD ***/
 	$cfg["sio2bsd"]["cmd"]="/usr/bin/sio2bsd";      					      // location of the sio2bsd binary
 	$cfg["sio2bsd"]["param"]="";
