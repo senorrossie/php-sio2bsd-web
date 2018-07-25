@@ -13,9 +13,9 @@
 		<link rel="stylesheet" href="css/tpl-plain.css">
 
 		<script src="js/ajax.js"></script>
-		<script src="js/slide.js"></script>
 		<script src="js/fdd.js"></script>
 		<script src="js/dragndrop.js"></script>
+		<script src="js/slide.js"></script>
 	</head>
 	<body>
 		<div class="icon-bar">
