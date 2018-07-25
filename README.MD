@@ -6,10 +6,10 @@ The [old version](https://github.com/senorrossie/php-sio2bsd-web/releases/tag/v1
 ## Background
 What I hacked together in an hour sufficed for the moment. With all the new atari 8-bit stuff that is released, this hack needed some improvements to bring it into the modern atari 8-bit era, so to say.
 
-Even though I am personally using this on a raspberry pi, any machine capable of running linux and/or sios2bd should work. Also any webserver capable of running php can be used. I tested this only on mini-httpd.
+Even though I am currently using this GUI on a raspberry pi, any machine capable of running linux and/or sios2bd should work. Also any webserver capable of running php can be used. I tested this only on mini-httpd.
 
 ## Installation
-First install a webserver and my (web-) scripting language of choice (2nd):
+Log onto the raspi OS (raspbian in my case) and become the root user (`sudo su -`) First install a webserver and the php scripting language:
 
     apt-get install -y mini-httpd php5-cgi
     mkdir -p /var/www/html && chown -R www-data: /var/www/
@@ -32,7 +32,7 @@ Then create a minimal version the mini-httpd config file:
 FIX the default settings in the .ini file of the php5-cgi package which is apache tailored and does not work with mini-httpd by default:
 
     sed -i 's/\;cgi\.force_redirect\ =\ 1/cgi\.force_redirect\ =\ 0/' /etc/php5/cgi/php.ini
-Last modify `/etc/default/mini-httpd` to allow the service to start, enable the service in the default runlevels and start it manually for this session:
+The last step is to modify `/etc/default/mini-httpd` to allow the service to start, enable the service in the default runlevels and start it manually for this session:
 
     cat << EOF > /etc/default/mini-httpd
     # Defaults for mini_httpd initscript
@@ -48,12 +48,11 @@ Last modify `/etc/default/mini-httpd` to allow the service to start, enable the 
     EOF
     insserv -d mini-httpd
     service mini-httpd start
-Now the web server is up and running, it is time to install the code to swap the floppies. First off, it all needs to reside in `/var/www/html`, as that's where the web server is looking for its files. The application can be installed like so: `git clone https://github.com/senorrossie/php-sio2bsd-web.git /var/www/html/ && chown -R www-data: /var/www/html`
+Now that the web server is up and running, it is time to install the code to swap the floppies. It all needs to reside in `/var/www/html`, as that's where the web server is looking for its files. The latest stable version of the application can be installed like so: `git clone https://github.com/senorrossie/php-sio2bsd-web.git /var/www/html/ && chown -R www-data: /var/www/html`
 
 ### Optional: The fandal archive
-If you are not like me, and you do not have tons of .atr images lying around, perhaps a kickstart is needed. For example, let's have the Fandal collection available on your RasPi, so you can experience both modern and classic games, and even demos!
-
-Fetch the complete archive in zip format (link is on the fandal webpage) and copy it to your pie, of feed the URL to wget on the RasPi itself. Unpack the archive to a directory you like, preferably in the basedir of the webserver (eg. `/var/www/html/fandal`) and don't forget to set the correct permissions(`chown -R www-data: /var/www/html/fandal`). And as a last step, you need to modify `.config.inc.php` (`$cfg["atr"]["path"]`) to match the location you selected.
+If you, unlike me, do not have tons of .atr images, perhaps a collection kickstart is needed...
+To make the Fandal atari 8-bit collection available on your RasPi - so you can experience both modern and classic games, and even demos! - you should start by fetching the complete archive in zip format (link is on the fandal webpage) and copy it to your pie. Ofcourse, you can also feed the URL to `wget` or `curl` on the RasPi itself. Unpack the archive to a directory you like, preferably in the basedir of the webserver (eg. `/var/www/html/fandal`) and don't forget to set the correct permissions(`chown -R www-data: /var/www/html/fandal`). Remember that you need to modify `.config.inc.php` (`$cfg["atr"]["path"]`) to match the location you unpacked the archive to.
 
 ## Dependencies
 In order to talk SIO over the USB/Serial port, you need the [sio2bsd program](https://github.com/TheMontezuma/SIO2BSD). A precompiled version is available from the [Atari Age forum post](http://atariage.com/forums/topic/209010-sio2pi-raspberry-pi-as-a-floppy/) on the subject.
@@ -63,7 +62,7 @@ There already is a config file in the repo with some sane defaults (notice that 
 If you need warp speed or want to add other parameters to the sio2bsd command by default, put them in `$cfg["sio2bsd"]["param"]=""` and if you want to load a default disk in a drive, specify the full path to the ATR file here as well.
 
 ## SIO2BSD
-The original [sio2bsd program](https://github.com/TheMontezuma/SIO2BSD) sets the permissions on the serial lockfile (/tmp/sio2bsd.*) fairly strict. This causes the webgui to fail to restart the program. I created a binary that sets the permissions a lot less strict. To install this, issue the following commands (note that you specify the same destination directory as you put in your config file):
+The original [sio2bsd program](https://github.com/TheMontezuma/SIO2BSD) sets the permissions on the serial lockfile (/tmp/sio2bsd.*) fairly strict. This causes the current version of the webgui to fail to restart the sio2bsd program. As a workaround, I created a binary that sets the permissions less strict. To install the workaround, issue the following commands (note that you specify the same destination directory as you put in your config file):
 
     sudo cp sio2bsd /usr/bin
     sudo chown root:root /usr/bin/sio2bsd
