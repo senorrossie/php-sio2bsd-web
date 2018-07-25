@@ -17,7 +17,7 @@
       isset($floppy) || $drives[$id]=$cfg["atr"]["drive".$id];
       print( "[D". $id ."]:". $drives[$id] ." ");
       $c=1;
-      if( strpos($drives[$id], '-') !== 0 ) {
+      if( $drives[$id] != "-" ) {
         if( strpos($drives[$id], '.') === 0 ) {
           $atrPath=str_replace( "./", $cfg["atr"]["path"], $drives[$id], $c);
         } else {
