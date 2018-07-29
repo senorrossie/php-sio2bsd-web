@@ -1,4 +1,3 @@
-#!/usr/bin/php5-cgi
 <?php
   include_once("config.inc.php");
   include_once( $cfg["php"]["include"] . "functions.inc.php");
