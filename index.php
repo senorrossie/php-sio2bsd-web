@@ -1,4 +1,3 @@
-#!/usr/bin/php5-cgi
 <!DOCTYPE html>
 <html>
 	<head>
@@ -19,10 +18,15 @@
 	</head>
 	<body>
 		<div class="icon-bar">
-			<a class="active" href="<?php echo($_SELF);?>"><span class="glyphicon glyphicon-home"></span></a>
+			<?php
+				@include_once( "config.inc.php");
+				@include_once( $cfg["php"]["include"] . "functions.inc.php");
+				$_CLEAN["SELF"] = clean($_SERVER["PHP_SELF"]);
+			?>
+			<a class="active" href="<?php echo $_CLEAN["SELF"];?>"><span class="glyphicon glyphicon-home"></span></a>
+			<a href="<?php echo $cfg["sio2bsd"]["printer"]="P1.txt";?>" id="printer"><span class="glyphicon glyphicon-print"></span></a>
 			<br />
 			<a href="#" id="refresh" onclick="loadDoc('gen_pathtree.php', 'msg-bar');"><span class="glyphicon glyphicon-refresh"></span></a>
-			<br />
 			<a href="#"><div id="eject" ondrop="eject(event)" ondragover="allowDrop(event)"><span class="glyphicon glyphicon-eject"></span></div></a>
 			<br />
 			<a href="#"><div id="drive1" ondrop="drop(event)" ondragover="allowDrop(event)"><span class="glyphicon glyphicon-floppy-disk"></span></div></a>
@@ -38,7 +42,6 @@
 			<div id="folder-hdr">Folders:</div>
 			<div class="folder-tree">
 				<?php
-				  @include_once( "config.inc.php");
 				  if( FALSE === @include($cfg["atr"]["htmlout"]."folders.html")) {
 						include( "folders.html");
 					}
