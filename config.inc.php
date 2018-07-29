@@ -28,4 +28,6 @@
 	$cfg["sio2bsd"]["cmd"]="/usr/bin/sio2bsd";      					      // location of the sio2bsd binary
 	$cfg["sio2bsd"]["param"]="";
 	$cfg["sio2bsd"]["serial"]="ttyUSB0";        					          // atari8warez dual usb: ttyUSB0 || sio2pi: ttyAMA0
+	$cfg["sio2bsd"]["printer"]="P1.txt";														// Printer output file;
+	$cfg["sio2bsd"]["ascii"]=false;																	// Convert ATASCII to ASCII?
 ?>
