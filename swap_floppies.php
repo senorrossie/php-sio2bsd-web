@@ -1,4 +1,3 @@
-#!/usr/bin/php5-cgi
 <?php
   include_once("config.inc.php");
   include_once( $cfg["php"]["include"] . "functions.inc.php");
@@ -12,7 +11,12 @@
 
     $cmdCLI=$cfg["sio2bsd"]["cmd"] . " " . $cfg["sio2bsd"]["param"];
     $cmdCLI.= " -s /dev/" . $cfg["sio2bsd"]["serial"] . " "; 
-
+    if( $cfg["sio2bsd"]["printer"] !== "" ) {
+      $cmdCLI.= " -p " . $cfg["php"]["basedir"] . $cfg["sio2bsd"]["printer"] . " ";
+      if ( $cfg["sio2bsd"]["ascii"] == true ) {
+        $cmdCLI.= " -t ";
+      }
+    }
     foreach( $drives as $id=>$floppy) {
       isset($floppy) || $drives[$id]=$cfg["atr"]["drive".$id];
       print( "[D". $id ."]:". $drives[$id] ." ");
