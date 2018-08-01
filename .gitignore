@@ -1,16 +1,18 @@
-# All of Fandal's archive
-fandal/**
+# All hidden files
+.*
 
 # All debug code
 debug/**
 *.bak
 
 # All cached data
-.cache/**
-
-# All hidden files
-.*
-!.gitignore
+cache/*
 
 # Serialized content
 *.ser.php
+
+# All of Fandal's archive
+fandal/**
+
+# Some exceptions
+!.gitignore
