@@ -1,4 +1,5 @@
 Bugs:
+  - Generate `index.php` Drive and Printer icons based on config settings (more than 4 drives?, max # of drives supported by sio2bsd?)
   - $_GET is not cleaned in swap_floppies.php
   - Some files in the fandal archive contain 'invalid' characters, resulting in weird output
   - Loaded images are still part of the active slider, even if from other html file.
