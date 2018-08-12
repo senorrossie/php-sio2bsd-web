@@ -71,7 +71,7 @@ function dump_array_to_html( $filename="", $data=array(), $parent="") {
 					$shortname=str_replace( $cfg["atr"]["path"], $cfg["atr"]["link"], $imgname );
 					$atrname=basename( $imgname, ".atr" );
 					$download=str_replace( $cfg["php"]["basedir"], "", $imgname );
-					$image=hasImage(str_replace(".atr", ".png", $download), $noimage );
+					$image=hasImage(str_ireplace(".atr", ".png", $download), $noimage );
 					//print( "Image: $image\n");
 					$htmlout="<div class=\"mainSlide\"><img src=\"$image\" style=\"width:100%\"></div>\n";
 					$slideout.="<div class=\"column\"><img class=\"thumb cursor\" src=\"$image\" style=\"width:100%\" id=\"$shortname\" draggable=\"true\" ondragstart=\"drag(event)\" onclick=\"currentSlide($c)\" alt=\"$shortname\"></div>\n";
