@@ -5,6 +5,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Web Experiments</title>
 
+		<!-- /// Favicon /// -->
+		<!-- sio2raspi -->
+		<link rel="icon" href="favicon-rpi.ico">
+		<!-- sio2bananapi
+		<link rel="icon" href="favicon-bpi.ico">
+		-->
+
 		<!-- /// Styling /// -->
 		<!-- Add icon library -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
